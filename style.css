@@ -5,24 +5,19 @@
    */
 /* Global Styles */
 
+/* Global Styles */
 * {
   box-sizing: border-box;
   font-family: Arial, sans-serif;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-  background-color: #f0f2f5;
-  margin: 0;
   padding: 20px;
+  background-color: #f0f0f0;
 }
 
 /* Headings */
 h1, h2 {
-  text-align: center;
   color: #333;
   margin-bottom: 20px;
 }
@@ -31,57 +26,57 @@ h1, h2 {
 form {
   display: flex;
   flex-direction: column;
-  align-items: center;
   width: 100%;
-  max-width: 500px;
+  max-width: 400px; /* Smaller boxes */
+  margin-bottom: 20px; /* Space between forms */
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for separation */
 }
 
 /* Fieldset Styles */
 fieldset {
   display: flex;
   flex-direction: column;
-  align-items: center;
   border: none;
-  width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 legend {
   font-weight: bold;
-  font-size: 1.2em;
-  color: #444;
-  margin-bottom: 15px;
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  color: #555;
 }
 
 /* Form Element Styles */
 div {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  width: 100%;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 label {
+  flex: 1;
+  margin-right: 10px;
   font-weight: 500;
-  color: #333;
-  margin-bottom: 5px;
 }
 
 small {
   font-size: 0.8em;
-  color: #666;
-  margin-bottom: 5px;
+  color: #777;
+  margin-left: 5px;
 }
 
 input, select, textarea {
-  width: 100%;
-  max-width: 300px;
-  padding: 10px;
+  flex: 2;
+  padding: 8px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 5px;
   font-size: 1em;
-  text-align: center;
 }
 
 textarea {
@@ -91,22 +86,54 @@ textarea {
 
 input[type="checkbox"],
 input[type="color"] {
+  flex: none;
   width: auto;
-  margin-top: 10px;
 }
 
 /* Submit Button Styles */
 button[type="submit"] {
-  padding: 10px 20px;
+  padding: 10px 15px;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   background-color: #007bff;
   color: #fff;
   font-size: 1em;
   cursor: pointer;
-  margin-top: 10px;
+  align-self: flex-start;
 }
 
 button[type="submit"]:hover {
   background-color: #0056b3;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  form {
+      padding: 10px;
+      max-width: 100%; /* Full width on small screens */
+  }
+
+  div {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  label {
+      margin-bottom: 5px;
+      margin-right: 0;
+  }
+
+  input, select, textarea {
+      width: 100%;
+  }
+
+  small {
+      margin-left: 0;
+      margin-bottom: 5px;
+  }
+
+  button[type="submit"] {
+      width: 100%;
+      align-self: stretch;
+  }
 }
